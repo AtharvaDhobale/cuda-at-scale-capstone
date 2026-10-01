@@ -1,0 +1,89 @@
+============================================================
+  CUDA AT SCALE FOR THE ENTERPRISE - CAPSTONE PROJECT       
+  High-Throughput GPU Image Processing Pipeline             
+============================================================
+============================================================
+CUDA GPU Hardware Information:
+  Device ID:                0
+  Device Name:              NVIDIA GeForce RTX 4060 Laptop GPU
+  Compute Capability:       8.9
+  Streaming Multiprocessors:24
+  Total Global Memory:      8188 MB
+  Shared Memory per Block:  48 KB
+  Warp Size:                32
+  Max Threads per Block:    1024
+  CUDA Driver Version:      12.5
+  CUDA Runtime Version:     12.5
+  NPP Library Version:      12.2.5
+============================================================
+
+============================================================
+Starting Batch Pipeline Execution
+  Input Directory:   data/inputs
+  Total Images:      120
+  CUDA Streams:      4
+  Batch Size:        16
+  Filter Operation:  Gaussian Blur (5x5)
+  Execution Engine:  Custom CUDA Kernels (Shared Memory)
+============================================================
+
+  [img_0001.ppm] 256x256 (3ch) -> GPU Kernel: 0.191 ms, Total GPU: 0.505 ms (Speedup: 28.7x)
+  [img_0002.ppm] 256x256 (3ch) -> GPU Kernel: 0.217 ms, Total GPU: 0.553 ms (Speedup: 25.9x)
+  [img_0003.ppm] 256x256 (3ch) -> GPU Kernel: 0.191 ms, Total GPU: 0.495 ms (Speedup: 30.1x)
+  [img_0004.ppm] 256x256 (3ch) -> GPU Kernel: 0.198 ms, Total GPU: 0.499 ms (Speedup: 30.0x)
+  [img_0005.ppm] 256x256 (3ch) -> GPU Kernel: 0.214 ms, Total GPU: 0.527 ms (Speedup: 27.0x)
+  [img_0006.ppm] 256x256 (3ch) -> GPU Kernel: 0.218 ms, Total GPU: 0.540 ms (Speedup: 26.7x)
+  [img_0007.ppm] 256x256 (3ch) -> GPU Kernel: 0.203 ms, Total GPU: 0.525 ms (Speedup: 27.3x)
+  [img_0008.ppm] 256x256 (3ch) -> GPU Kernel: 0.214 ms, Total GPU: 0.552 ms (Speedup: 27.6x)
+  [img_0009.ppm] 256x256 (3ch) -> GPU Kernel: 0.229 ms, Total GPU: 0.542 ms (Speedup: 27.6x)
+  [img_0010.ppm] 256x256 (3ch) -> GPU Kernel: 0.215 ms, Total GPU: 0.554 ms (Speedup: 27.1x)
+  [img_0011.ppm] 256x256 (3ch) -> GPU Kernel: 0.192 ms, Total GPU: 0.507 ms (Speedup: 28.8x)
+  [img_0012.ppm] 256x256 (3ch) -> GPU Kernel: 0.199 ms, Total GPU: 0.485 ms (Speedup: 30.1x)
+  [img_0013.ppm] 256x256 (3ch) -> GPU Kernel: 0.205 ms, Total GPU: 0.521 ms (Speedup: 27.8x)
+  [img_0014.ppm] 256x256 (3ch) -> GPU Kernel: 0.228 ms, Total GPU: 0.538 ms (Speedup: 28.0x)
+  [img_0015.ppm] 256x256 (3ch) -> GPU Kernel: 0.219 ms, Total GPU: 0.511 ms (Speedup: 28.8x)
+  [img_0020.ppm] 256x256 (3ch) -> GPU Kernel: 0.208 ms, Total GPU: 0.533 ms (Speedup: 27.3x)
+  [img_0030.ppm] 256x256 (3ch) -> GPU Kernel: 0.216 ms, Total GPU: 0.526 ms (Speedup: 27.4x)
+  [img_0040.ppm] 256x256 (3ch) -> GPU Kernel: 0.213 ms, Total GPU: 0.514 ms (Speedup: 28.2x)
+  [img_0050.ppm] 256x256 (3ch) -> GPU Kernel: 0.192 ms, Total GPU: 0.524 ms (Speedup: 29.3x)
+  [img_0060.ppm] 256x256 (3ch) -> GPU Kernel: 0.200 ms, Total GPU: 0.533 ms (Speedup: 28.3x)
+  [img_0070.ppm] 256x256 (3ch) -> GPU Kernel: 0.212 ms, Total GPU: 0.505 ms (Speedup: 29.8x)
+  [img_0080.ppm] 256x256 (3ch) -> GPU Kernel: 0.215 ms, Total GPU: 0.516 ms (Speedup: 30.1x)
+  [img_0090.ppm] 256x256 (3ch) -> GPU Kernel: 0.201 ms, Total GPU: 0.522 ms (Speedup: 28.4x)
+  [img_0100.ppm] 256x256 (3ch) -> GPU Kernel: 0.213 ms, Total GPU: 0.530 ms (Speedup: 28.0x)
+  [img_0110.ppm] 256x256 (3ch) -> GPU Kernel: 0.224 ms, Total GPU: 0.528 ms (Speedup: 29.0x)
+  [img_0116.ppm] 256x256 (3ch) -> GPU Kernel: 0.201 ms, Total GPU: 0.493 ms (Speedup: 29.7x)
+  [img_0117.ppm] 256x256 (3ch) -> GPU Kernel: 0.196 ms, Total GPU: 0.504 ms (Speedup: 30.1x)
+  [img_0118.ppm] 256x256 (3ch) -> GPU Kernel: 0.193 ms, Total GPU: 0.513 ms (Speedup: 29.2x)
+  [img_0119.ppm] 256x256 (3ch) -> GPU Kernel: 0.198 ms, Total GPU: 0.507 ms (Speedup: 30.5x)
+  [img_0120.ppm] 256x256 (3ch) -> GPU Kernel: 0.218 ms, Total GPU: 0.547 ms (Speedup: 27.9x)
+
+  Processed [ 10/120] images...
+  Processed [ 20/120] images...
+  Processed [ 30/120] images...
+  Processed [ 40/120] images...
+  Processed [ 50/120] images...
+  Processed [ 60/120] images...
+  Processed [ 70/120] images...
+  Processed [ 80/120] images...
+  Processed [ 90/120] images...
+  Processed [100/120] images...
+  Processed [110/120] images...
+  Processed [120/120] images...
+
+============================================================
+Pipeline Performance & Execution Summary
+============================================================
+  Images Processed:          120
+  Total Megapixels:          7.86 MP
+  Total Wall Execution Time: 45.40 ms (0.045 s)
+  Average GPU Time / Image:  0.526 ms
+  Average Pure Kernel Time:  0.210 ms
+  Overall Throughput:        173.21 Megapixels/sec
+  Effective Processing Rate: 2642.9 FPS
+  CPU Total Baseline Time:   1788.83 ms
+  GPU vs CPU Speedup:        28.37x
+============================================================
+
+Successfully exported benchmark metrics to: artifacts/benchmark_results.csv
+All operations finished successfully.

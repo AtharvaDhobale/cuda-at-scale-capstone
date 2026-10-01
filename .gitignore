@@ -1,0 +1,29 @@
+# Binaries and object files
+bin/*
+!bin/.gitkeep
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+*.exe
+
+# Intermediate build directories
+build/
+obj/
+
+# Outputs and large data generated dynamically
+data/outputs/*
+!data/outputs/.gitkeep
+
+# Operating system / IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python cache
+__pycache__/
+*.pyc

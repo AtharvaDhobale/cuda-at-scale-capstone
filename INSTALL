@@ -1,0 +1,119 @@
+# Installation & Environment Setup Guide
+## Scalable High-Throughput GPU Image Processing Pipeline
+
+This guide outlines system requirements and installation steps across Linux (Ubuntu/Debian, CentOS/RHEL, Coursera Lab VMs) and Windows.
+
+---
+
+### Prerequisites & Hardware Requirements
+
+1. **NVIDIA GPU**: CUDA Compute Capability >= 6.0 (Pascal, Volta, Turing, Ampere, Ada Lovelace, Hopper, Blackwell).
+2. **NVIDIA GPU Driver**: Version 450.80.02 or newer.
+3. **CUDA Toolkit**: CUDA 11.x or 12.x (includes `nvcc`, CUDA Runtime, and NVIDIA NPP libraries).
+4. **C++ Compiler**: GCC / G++ (version 7.5 or newer supporting C++17) or Clang.
+5. **Python 3**: Version 3.6 or newer (standard library only; no pip packages needed).
+6. **Build Tools**: GNU Make and standard Unix utilities (`tar`, `gzip`).
+
+---
+
+### Operating System Instructions
+
+#### 1. Linux (Coursera Lab VM / Ubuntu 20.04 / 22.04 LTS)
+
+In the Coursera lab environment, CUDA Toolkit and NVIDIA drivers are already installed at `/usr/local/cuda`.
+
+Verify CUDA installation:
+```bash
+nvcc --version
+nvidia-smi
+```
+
+If needed, add CUDA binaries and libraries to your environment:
+```bash
+export PATH="/usr/local/cuda/bin:${PATH}"
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:${LD_LIBRARY_PATH:-}"
+```
+
+Clone the repository and build:
+```bash
+git clone <YOUR_REPOSITORY_URL>
+cd silly-davinci
+
+# Compile project
+make clean
+make -j$(nproc)
+```
+
+Run test suite:
+```bash
+make test
+```
+
+---
+
+#### 2. Ubuntu / Debian (Local or Cloud Instances)
+
+Install build essentials and development libraries:
+```bash
+sudo apt-get update
+sudo apt-get install -y build-essential git python3
+
+# If CUDA Toolkit is not installed, install via NVIDIA official repository:
+# sudo apt-get install -y cuda-toolkit-12-x
+```
+
+Verify NVIDIA NPP library packages are present:
+```bash
+ldconfig -p | grep npp
+```
+
+Build and execute:
+```bash
+make -j$(nproc)
+./run.sh
+```
+
+---
+
+#### 3. Red Hat Enterprise Linux (RHEL) / CentOS / Fedora
+
+Install development tools:
+```bash
+sudo dnf groupinstall "Development Tools"
+sudo dnf install git python3 make
+```
+
+Ensure `CUDA_PATH` environment variable is set:
+```bash
+export CUDA_PATH=/usr/local/cuda
+make -j$(nproc)
+./run.sh
+```
+
+---
+
+#### 4. Microsoft Windows (via WSL2 or Native MSVC)
+
+**Option A: Windows Subsystem for Linux (WSL2 - Recommended)**
+1. Ensure the latest NVIDIA Windows display driver is installed on the host.
+2. Open Ubuntu terminal in WSL2.
+3. Build and execute using standard Linux commands:
+   ```bash
+   make -j$(nproc)
+   ./run.sh
+   ```
+
+**Option B: Native Windows (Visual Studio / NMake)**
+1. Open "x64 Native Tools Command Prompt for VS 2022".
+2. Ensure CUDA Toolkit for Windows is installed (default path: `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.x`).
+3. Compile using `nvcc` directly or use the provided CMake/Makefile configurations.
+
+---
+
+### Verification
+
+To verify that the installation is completely functional:
+```bash
+./bin/cuda_imgproc --help
+```
+If the command outputs the options banner, your environment is ready to process large batches of images.
